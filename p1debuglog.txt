@@ -1,1 +1,74 @@
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x90d: file p1final.c, line 19.
+(gdb) r
+Starting program: /home/runner/Test2Session2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p1final.c:19
+19  {
+(gdb) n
+21    input(&x1,&y1,&x2,&y2);
+(gdb) s
+input (x1=0x7ffe1d8a3564, y1=0x7ffe1d8a3568, x2=0x7ffe1d8a356c, 
+    y2=0x7ffe1d8a3570) at p1final.c:5
+5     printf("enter the first points\n");
+(gdb) n
+enter the first points
+6     scanf("%f%f",x1,y1);
+(gdb) n
+4 5
+7     printf("enter the second points\n");
+(gdb) n
+enter the second points
+8     scanf("%f%f",x2,y2);
+(gdb) n
+2 3
+9   }
+(gdb) n
+main () at p1final.c:22
+22    find_distance(x1,y1,x2,y2,&area);
+(gdb) s
+find_distance (x1=4, y1=5, x2=2, y2=3, area=0x7ffe1d8a3574) at p1final.c:12
+12    *area=sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
+(gdb) n
+13  }
+(gdb) p x1
+$1 = 4
+(gdb) p y1
+$2 = 5
+(gdb) p x2
+$3 = 2
+(gdb) p y2
+$4 = 3
+(gdb) n
+main () at p1final.c:23
+23    output(x1,y1,x2,y2,area);
+(gdb) s
+output (x1=4, y1=5, x2=2, y2=3, area=2.82842708) at p1final.c:16
+16    printf("the distance between (%f,%f) and (%f,%f) is %f\n",x1,y1,x2,y2,area );
+(gdb) n
+the distance between (4.000000,5.000000) and (2.000000,3.000000) is 2.828427
+17  }
+(gdb) p area
+$5 = 2.82842708
+(gdb) n
+main () at p1final.c:24
+24    return 0;
+(gdb) n
+25  }
