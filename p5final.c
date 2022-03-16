@@ -10,30 +10,33 @@ int input_array_size()
 void init_array(int n, int a[n])
 {
   for(int i=0;i<n;i++)
-    a[i]=i;
-    a[0]=0;
-   a[1]=0;
+    {
+    a[i]=i+1;
+  }
 }
 void erotosthenes_sieve(int n, int a[n])
 {
-  int i=0;
-  while(i<sqrt(n))
+  int i,j;
+  for(i=1;i<n;i++)
     {
-      while(a[i]==0)
-        i++;
-      for(int k=i+i;i<n;k+=i)
+      if(a[i]==0)
+        continue;
+      for(j=a[i]+1;j<=n;j++)
         {
-        a[k]=0;
-      i++;
+        if(j%a[i]==0)
+      a[j-1]=0;
           }
     }
 }
 void out_put(int n, int a[n])
 {
+  printf("the prime numbers are\n");
   for(int i=0;i<n;i++)
     {
       if(a[i]!=0)
-        printf("%d",a[i]);
+      {
+        printf("%d ",a[i]);
+        }
     }
   printf("/n");
   }
