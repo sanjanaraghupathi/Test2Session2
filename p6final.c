@@ -1,5 +1,10 @@
 #include<stdio.h>
-int input_array_size()
+#include<string.h>
+int main()
 {
-  
+      
+
+
 }
+
+  

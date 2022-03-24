@@ -1,1 +1,201 @@
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x93f: file p5final.c, line 44.
+(gdb) r
+Starting program: /home/runner/Test2Session2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p5final.c:44
+44  {
+(gdb) n
+45    int n,a[n];
+(gdb) s
+46    n=input_array_size();
+(gdb) s
+input_array_size () at p5final.c:4
+4   {
+(gdb) n
+6     printf("enter the array size");
+(gdb) n
+7     scanf("%d",&a);
+(gdb) n
+enter the array size
+5
+8     return a;
+(gdb) n
+9   }
+(gdb) n
+main () at p5final.c:47
+47    init_array(n,a);
+(gdb) s
+init_array (n=5, a=0x7ffecda268f0) at p5final.c:12
+12    for(int i=0;i<n;i++)
+(gdb) p n
+$1 = 5
+(gdb) n
+14      a[i]=i+1;
+(gdb) n
+12    for(int i=0;i<n;i++)
+(gdb) p n
+$2 = 5
+(gdb) n
+14      a[i]=i+1;
+(gdb) n
+12    for(int i=0;i<n;i++)
+(gdb) p[i]
+A syntax error in expression, near `[i]'.
+(gdb) n
+14      a[i]=i+1;
+(gdb) n
+12    for(int i=0;i<n;i++)
+(gdb) p a[i]
+$3 = 3
+(gdb) n
+14      a[i]=i+1;
+(gdb) n
+12    for(int i=0;i<n;i++)
+(gdb) p a[i]
+$4 = 4
+(gdb) n
+14      a[i]=i+1;
+(gdb) n
+12    for(int i=0;i<n;i++)
+(gdb) p a[i]
+$5 = 5
+(gdb) n
+16  }
+(gdb) n
+main () at p5final.c:48
+48    erotosthenes_sieve(n,a);
+(gdb) s
+erotosthenes_sieve (n=5, a=0x7ffecda268f0) at p5final.c:20
+20    for(i=1;i<n;i++)
+(gdb) p a[i]
+Cannot access memory at address 0x7ffcf6a1dcf0
+(gdb) n
+22        if(a[i]==0)
+(gdb) n
+24        for(j=a[i]+1;j<=n;j++)
+(gdb) n
+26          if(j%a[i]==0)
+(gdb) n
+24        for(j=a[i]+1;j<=n;j++)
+(gdb) n
+26          if(j%a[i]==0)
+(gdb) n
+27        a[j-1]=0;
+(gdb) n
+24        for(j=a[i]+1;j<=n;j++)
+(gdb) p j
+$6 = 4
+(gdb) n
+26          if(j%a[i]==0)
+(gdb) n
+24        for(j=a[i]+1;j<=n;j++)
+(gdb) p j
+$7 = 5
+(gdb) n
+20    for(i=1;i<n;i++)
+(gdb) p i
+$8 = 1
+(gdb) n
+22        if(a[i]==0)
+(gdb) n
+24        for(j=a[i]+1;j<=n;j++)
+(gdb) p j
+$9 = 6
+(gdb) n
+26          if(j%a[i]==0)
+(gdb) n
+24        for(j=a[i]+1;j<=n;j++)
+(gdb) p j
+$10 = 4
+(gdb) n
+26          if(j%a[i]==0)
+(gdb) n
+24        for(j=a[i]+1;j<=n;j++)
+(gdb) n
+20    for(i=1;i<n;i++)
+(gdb) p i
+$11 = 2
+(gdb) n
+22        if(a[i]==0)
+(gdb) n
+23          continue;
+(gdb) n
+20    for(i=1;i<n;i++)
+(gdb) p i
+$12 = 3
+(gdb) n
+22        if(a[i]==0)
+(gdb) n
+24        for(j=a[i]+1;j<=n;j++)
+(gdb) p j
+$13 = 6
+(gdb) n
+20    for(i=1;i<n;i++)
+(gdb) p i 
+$14 = 4
+(gdb) n
+30  }
+(gdb) n
+main () at p5final.c:49
+49    out_put( n,a);
+(gdb) s
+out_put (n=5, a=0x7ffecda268f0) at p5final.c:33
+33    printf("the prime numbers are\n");
+(gdb) n
+the prime numbers are
+34    for(int i=0;i<n;i++)
+(gdb) n
+36        if(a[i]!=0)
+(gdb) n
+38          printf("%d ",a[i]);
+(gdb) n
+34    for(int i=0;i<n;i++)
+(gdb) n
+36        if(a[i]!=0)
+(gdb) n
+38          printf("%d ",a[i]);
+(gdb) n
+34    for(int i=0;i<n;i++)
+(gdb) n
+36        if(a[i]!=0)
+(gdb) n
+38          printf("%d ",a[i]);
+(gdb) n
+34    for(int i=0;i<n;i++)
+(gdb) n
+36        if(a[i]!=0)
+(gdb) n
+34    for(int i=0;i<n;i++)
+(gdb) n
+36        if(a[i]!=0)
+(gdb) n
+38          printf("%d ",a[i]);
+(gdb) n
+34    for(int i=0;i<n;i++)
+(gdb) n
+41    printf("/n");
+(gdb) n
+42    }
+(gdb) n
+main () at p5final.c:50
+50    return 0;
+(gdb) n
+52  }
