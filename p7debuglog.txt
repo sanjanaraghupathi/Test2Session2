@@ -1,1 +1,370 @@
+gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x8f0: file p6final.c, line 35.
+(gdb) r
+Starting program: /home/runner/Test2Session2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p6final.c:35
+35  {
+(gdb) n
+38    input_string(a);
+(gdb) s
+input_string (a=0x7ffea30f31d0 "\001") at p6final.c:5
+5     printf("Enter a string\n");
+(gdb) n
+Enter a string
+6     scanf("%s",a);
+(gdb) n
+helloworldhello
+7   }
+(gdb) n
+main () at p6final.c:39
+39    index=str_substr(a,b);
+(gdb) s
+str_substr (string=0x7ffea30f31d0 "helloworldhello", 
+    substring=0x7ffea30f31f0 "`\t\340\317\aV") at p6final.c:10
+10    int index=0,i,j;
+(gdb) n
+11    printf("enter the substring\n");
+(gdb) n
+enter the substring
+12    scanf("%s",substring);
+(gdb) n
+world
+13    int n=strlen(string);
+(gdb) n
+14    int b=strlen(substring);
+(gdb) n
+15   for(i=0;i<string[i]!='\0';i++)
+(gdb) n
+17        j=0 ;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) n
+24          j++;
+(gdb) p substring[j]
+$1 = 119 'w'
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) n
+24          j++;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) p substring[j]
+$2 = 114 'r'
+(gdb) n
+24          j++;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) n
+24          j++;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) n
+24          j++;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+26        if (index== b) 
+(gdb) n
+15   for(i=0;i<string[i]!='\0';i++)
+(gdb) n
+17        j=0 ;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) n
+24          j++;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) n
+24          j++;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) 
+24          j++;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) p substring[j]
+$3 = 108 'l'
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) n
+24          j++;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) n
+24          j++;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+26        if (index== b) 
+(gdb) n
+15   for(i=0;i<string[i]!='\0';i++)
+(gdb) n
+17        j=0 ;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) n
+24          j++;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) p substring[j]
+$4 = 111 'o'
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) n
+24          j++;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) n
+24          j++;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) n
+22            index=index+1; 
+(gdb) n
+24          j++;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) n
+24          j++;
+(gdb) p substring[j]
+$5 = 100 'd'
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+26        if (index== b) 
+(gdb) n
+15   for(i=0;i<string[i]!='\0';i++)
+(gdb) n
+17        j=0 ;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) n
+24          j++;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) n
+24          j++;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) n
+24          j++;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) n
+22            index=index+1; 
+(gdb) 
+24          j++;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) p index
+$6 = 2
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) n
+24          j++;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+26        if (index== b) 
+(gdb) n
+15   for(i=0;i<string[i]!='\0';i++)
+(gdb) n
+17        j=0 ;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) n
+24          j++;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) n
+22            index=index+1; 
+(gdb) n
+24          j++;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) p index
+$7 = 3
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) n
+24          j++;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) n
+24          j++;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) n
+24          j++;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+26        if (index== b) 
+(gdb) n
+15   for(i=0;i<string[i]!='\0';i++)
+(gdb) n
+17        j=0 ;
+(gdb) 
+18        while(substring[j]!='\0')
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) p substring[j]
+$8 = 119 'w'
+(gdb) n
+22            index=index+1; 
+(gdb) n
+24          j++;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) p index
+$9 = 4
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) n
+24          j++;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) n
+24          j++;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) n
+24          j++;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) 
+24          j++;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+26        if (index== b) 
+(gdb) n
+15   for(i=0;i<string[i]!='\0';i++)
+(gdb) 
+17        j=0 ;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) n
+24          j++;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) n
+22            index=index+1; 
+(gdb) n
+24          j++;
+(gdb) p index
+$10 = 5
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) n
+24          j++;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) n
+24          j++;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+20          if(string[i]==substring[j])
+(gdb) n
+24          j++;
+(gdb) n
+18        while(substring[j]!='\0')
+(gdb) n
+26        if (index== b) 
+(gdb) n
+27          return index;
+(gdb) n
+29  }
+(gdb) p index
+$11 = 5
+(gdb) n
+main () at p6final.c:40
+40    output(a,b,index);
+(gdb) s
+output (string=0x7ffea30f31d0 "helloworldhello", 
+    substring=0x7ffea30f31f0 "world", index=5) at p6final.c:32
+32    printf("The substring %s of string %s is %d\n",substring,string,index);
+(gdb) n
+The substring world of string helloworldhello is 5
+(gdb) n
+33  }
+(gdb) n
+main () at p6final.c:41
+41    return 0;
+(gdb) n
+42  }(gdb) 
