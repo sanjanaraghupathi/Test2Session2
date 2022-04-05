@@ -1,1 +1,189 @@
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x977: file p7final.c, line 43.
+(gdb) n
+The program is not being run.
+(gdb) r
+Starting program: /home/runner/Test2Session2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p7final.c:43
+43  {
+(gdb) n
+44      Line l = input_line();
+(gdb) s
+input_line () at p7final.c:25
+25      printf("Enter the first point:\n");
+(gdb) n
+Enter the first point:
+26      l.p1 = input_point();
+(gdb) n
+1 2
+27      printf("Enter the second point:\n");
+(gdb) n
+Enter the second point:
+28      l.p2 = input_point();
+(gdb) n
+2 3
+29      return l;
+(gdb) n
+ gcc -g p5final.c 
+ 
+ gcc -g p8final.c -lm
+ ./a.out
+Enter the number of sides of the polygon: 
+5
+Enter the coordinates of point 1 (x,y): 
+1 2
+Enter the coordinates of point 2 (x,y): 
+2 3
+Enter the coordinates of point 3 (x,y): 
+3 4   
+Enter the coordinates of point 4 (x,y): 
+4 5
+Enter the coordinates of point 5 (x,y): 
+5 6
+The perimeter of the polynomial is: 11.313708
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0xb29: file p8final.c, line 85.
+(gdb) r
+Starting program: /home/runner/Test2Session2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p8final.c:85
+85  {
+(gdb) n
+87      input_polygon(&p);
+(gdb) s
+input_polygon (p=0x7fff2ef12620) at p8final.c:50
+50      p->sides = input_n();
+(gdb) s
+input_n () at p8final.c:25
+25  {
+(gdb) n
+27      printf("Enter the number of sides of the polygon: ");
+(gdb) n
+28      scanf("%d", &n);
+(gdb) n
+Enter the number of sides of the polygon: 3
+29      return n;
+(gdb) n
+30  }
+(gdb) n
+input_polygon (p=0x7fff2ef12620) at p8final.c:51
+51      input_n_lines(p->sides, p->l);
+(gdb) s
+input_n_lines (n=3, l=0x7fff2ef12624) at p8final.c:42
+42      for (int i = 0; i < n; i++)
+(gdb) p i
+$1 = 21858
+(gdb) n
+44          l[i] = input_line(i + 1);
+(gdb) n
+Enter the coordinates of point 1 (x,y): 
+1 2
+42      for (int i = 0; i < n; i++)
+(gdb) p i
+$2 = 0
+(gdb) n
+44          l[i] = input_line(i + 1);
+(gdb) n
+Enter the coordinates of point 2 (x,y): 
+2 3
+42      for (int i = 0; i < n; i++)
+(gdb) p i
+$3 = 1
+(gdb) n
+44          l[i] = input_line(i + 1);
+(gdb) n
+Enter the coordinates of point 3 (x,y): 
+3 4
+42      for (int i = 0; i < n; i++)
+(gdb) p i
+$4 = 2
+(gdb) n
+46  }
+(gdb) n
+input_polygon (p=0x7fff2ef12620) at p8final.c:52
+52      p->perimeter = 0;
+(gdb) s
+53  }
+(gdb) n
+main () at p8final.c:88
+88      find_perimeter(&p);
+(gdb) s
+find_perimeter (p=0x7fff2ef12620) at p8final.c:72
+72      find_n_distance(p->sides, p->l);
+(gdb) n
+73      for (int i = 0; i < p->sides; i++)
+(gdb) p l[i]
+No symbol "l" in current context.
+(gdb) n 
+75          p->perimeter += p->l[i].distance;
+(gdb) n
+73      for (int i = 0; i < p->sides; i++)
+(gdb) p i
+$5 = 0
+(gdb) n
+75          p->perimeter += p->l[i].distance;
+(gdb) p a
+$6 = {i = {0, 1045149306}, d = 1.2904777690891933e-08}
+(gdb) n
+73      for (int i = 0; i < p->sides; i++)
+(gdb) p b
+$7 = {i = {0, 1068498944}, d = 0.0625}
+(gdb) n
+75          p->perimeter += p->l[i].distance;
+(gdb) n
+73      for (int i = 0; i < p->sides; i++)
+(gdb) p i
+$8 = 2
+(gdb) n
+77  }
+(gdb) n
+main () at p8final.c:89
+89      output(p);
+(gdb) s
+output (p=...) at p8final.c:81
+81      printf("The perimeter of the polynomial is: %f\n", p.perimeter);
+(gdb) n
+The perimeter of the polynomial is: 5.656854
+82  }
+(gdb) p perimeter
+No symbol "perimeter" in current context.
+(gdb) n
+main () at p8final.c:90
+90      return 0;
+(gdb) n
+91  }

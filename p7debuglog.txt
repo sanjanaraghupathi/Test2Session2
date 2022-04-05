@@ -1,4 +1,4 @@
-gdb a.out
+ gdb a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
@@ -15,356 +15,55 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
 (gdb) b main
-Breakpoint 1 at 0x8f0: file p6final.c, line 35.
+Breakpoint 1 at 0x977: file p7final.c, line 43.
+(gdb) n
+The program is not being run.
 (gdb) r
 Starting program: /home/runner/Test2Session2/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p6final.c:35
-35  {
+Breakpoint 1, main () at p7final.c:43
+43  {
 (gdb) n
-38    input_string(a);
+44      Line l = input_line();
 (gdb) s
-input_string (a=0x7ffea30f31d0 "\001") at p6final.c:5
-5     printf("Enter a string\n");
+input_line () at p7final.c:25
+25      printf("Enter the first point:\n");
 (gdb) n
-Enter a string
-6     scanf("%s",a);
+Enter the first point:
+26      l.p1 = input_point();
 (gdb) n
-helloworldhello
-7   }
+1 2
+27      printf("Enter the second point:\n");
 (gdb) n
-main () at p6final.c:39
-39    index=str_substr(a,b);
+Enter the second point:
+28      l.p2 = input_point();
+(gdb) n
+2 3
+29      return l;
+(gdb) n
+30  }
+(gdb) n
+main () at p7final.c:45
+45      find_length(&l);
 (gdb) s
-str_substr (string=0x7ffea30f31d0 "helloworldhello", 
-    substring=0x7ffea30f31f0 "`\t\340\317\aV") at p6final.c:10
-10    int index=0,i,j;
+find_length (l=0x7ffcda7f9510) at p7final.c:34
+34      l->distance=sqrt((l->p1.x-l->p2.x)*(l->p1.x-l->p2.x)+(l->p1.y-l->p2.y)*(l->p1.y-l->p2.y));
 (gdb) n
-11    printf("enter the substring\n");
+35  }
 (gdb) n
-enter the substring
-12    scanf("%s",substring);
-(gdb) n
-world
-13    int n=strlen(string);
-(gdb) n
-14    int b=strlen(substring);
-(gdb) n
-15   for(i=0;i<string[i]!='\0';i++)
-(gdb) n
-17        j=0 ;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) n
-24          j++;
-(gdb) p substring[j]
-$1 = 119 'w'
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) n
-24          j++;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) p substring[j]
-$2 = 114 'r'
-(gdb) n
-24          j++;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) n
-24          j++;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) n
-24          j++;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-26        if (index== b) 
-(gdb) n
-15   for(i=0;i<string[i]!='\0';i++)
-(gdb) n
-17        j=0 ;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) n
-24          j++;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) n
-24          j++;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) 
-24          j++;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) p substring[j]
-$3 = 108 'l'
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) n
-24          j++;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) n
-24          j++;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-26        if (index== b) 
-(gdb) n
-15   for(i=0;i<string[i]!='\0';i++)
-(gdb) n
-17        j=0 ;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) n
-24          j++;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) p substring[j]
-$4 = 111 'o'
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) n
-24          j++;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) n
-24          j++;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) n
-22            index=index+1; 
-(gdb) n
-24          j++;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) n
-24          j++;
-(gdb) p substring[j]
-$5 = 100 'd'
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-26        if (index== b) 
-(gdb) n
-15   for(i=0;i<string[i]!='\0';i++)
-(gdb) n
-17        j=0 ;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) n
-24          j++;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) n
-24          j++;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) n
-24          j++;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) n
-22            index=index+1; 
-(gdb) 
-24          j++;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) p index
-$6 = 2
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) n
-24          j++;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-26        if (index== b) 
-(gdb) n
-15   for(i=0;i<string[i]!='\0';i++)
-(gdb) n
-17        j=0 ;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) n
-24          j++;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) n
-22            index=index+1; 
-(gdb) n
-24          j++;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) p index
-$7 = 3
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) n
-24          j++;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) n
-24          j++;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) n
-24          j++;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-26        if (index== b) 
-(gdb) n
-15   for(i=0;i<string[i]!='\0';i++)
-(gdb) n
-17        j=0 ;
-(gdb) 
-18        while(substring[j]!='\0')
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) p substring[j]
-$8 = 119 'w'
-(gdb) n
-22            index=index+1; 
-(gdb) n
-24          j++;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) p index
-$9 = 4
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) n
-24          j++;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) n
-24          j++;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) n
-24          j++;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) 
-24          j++;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-26        if (index== b) 
-(gdb) n
-15   for(i=0;i<string[i]!='\0';i++)
-(gdb) 
-17        j=0 ;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) n
-24          j++;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) n
-22            index=index+1; 
-(gdb) n
-24          j++;
-(gdb) p index
-$10 = 5
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) n
-24          j++;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) n
-24          j++;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-20          if(string[i]==substring[j])
-(gdb) n
-24          j++;
-(gdb) n
-18        while(substring[j]!='\0')
-(gdb) n
-26        if (index== b) 
-(gdb) n
-27          return index;
-(gdb) n
-29  }
-(gdb) p index
-$11 = 5
-(gdb) n
-main () at p6final.c:40
-40    output(a,b,index);
+main () at p7final.c:46
+46      output(l);
 (gdb) s
-output (string=0x7ffea30f31d0 "helloworldhello", 
-    substring=0x7ffea30f31f0 "world", index=5) at p6final.c:32
-32    printf("The substring %s of string %s is %d\n",substring,string,index);
+output (l=...) at p7final.c:39
+39      printf("The length of line with endpoints (%f,%f) and (%f,%f) is %f\n", l.p1.x, l.p1.y, l.p2.x, l.p2.y, l.distance);
 (gdb) n
-The substring world of string helloworldhello is 5
+The length of line with endpoints (1.000000,2.000000) and (2.000000,3.000000) is 1.414214
+40  }
 (gdb) n
-33  }
+main () at p7final.c:47
+47      return 0;
 (gdb) n
-main () at p6final.c:41
-41    return 0;
-(gdb) n
-42  }(gdb) 
+48  }
+(gdb) Quit
+(gdb) 
